@@ -1,0 +1,83 @@
+<div class="container">
+  <h1>Créer votre Compte</h1>
+  <br>
+
+  <form [formGroup]="registerForm" (ngSubmit)="register()">
+    <!-- First name -->
+    <div class="box">
+      <label class="fontLabel"> First Name: </label>
+      <div class="iconBox">
+        <i class="fa fa-user" aria-hidden="true"></i>
+      </div>
+      <div>
+        <input type="text" formControlName="nom" placeholder="First Name" class="textBox" required>
+      </div>
+      <div class="clr"></div>
+    </div>
+
+    <!-- Second name -->
+    <div class="box">
+      <label class="fontLabel"> Second Name: </label>
+      <div class="iconBox">
+        <i class="fa fa-user" aria-hidden="true"></i>
+      </div>
+      <div>
+        <input type="text" formControlName="prenom" placeholder="Last Name" class="textBox" required>
+      </div>
+      <div class="clr"></div>
+    </div>
+
+    <!-- Phone No. -->
+    <div class="box">
+      <label class="fontLabel"> Phone No.: </label>
+      <div class="iconBox">
+        <i class="fa fa-phone-square" aria-hidden="true"></i>
+      </div>
+      <div>
+        <input type="text" formControlName="telephone" maxlength="10" placeholder="Phone No." class="textBox" required>
+      </div>
+      <div class="clr"></div>
+    </div>
+
+    <!-- Email ID -->
+    <div class="box">
+      <label class="fontLabel"> Email ID: </label>
+      <div class="iconBox">
+        <i class="fa fa-envelope" aria-hidden="true"></i>
+      </div>
+      <div>
+        <input type="email" formControlName="email" placeholder="Email Id" class="textBox" required>
+      </div>
+      <div class="clr"></div>
+    </div>
+
+    <!-- Password -->
+    <div class="box">
+      <label class="fontLabel"> Password: </label>
+      <div class="iconBox">
+        <i class="fa fa-key" aria-hidden="true"></i>
+      </div>
+      <div>
+        <input type="password" formControlName="motDePasse" placeholder="Password" class="textBox" required>
+      </div>
+      <div class="clr"></div>
+    </div>
+
+    <!-- Gender -->
+    <div class="box radio">
+      <label class="fontLabel"> Gender: </label>
+      <input type="radio" formControlName="gender" value="MALE" required> Male    
+      <input type="radio" formControlName="gender" value="FEMALE" required> Female
+    </div>
+
+    <!-- Terms and Conditions -->
+    <div class="box terms">
+      <input type="checkbox" name="terms" required> I accept the terms and conditions
+    </div>
+
+    <!-- Submit Button -->
+    <div class="box">
+      <button type="submit" class="submit">SUBMIT</button>
+    </div>
+  </form>
+</div>
