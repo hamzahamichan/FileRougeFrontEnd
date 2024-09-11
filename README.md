@@ -55,10 +55,18 @@ La création d'un site web de réservation de salles de fêtes apporte de nombre
 
 ---
 
-### Installation et Utilisation
+## Installation et Utilisation
 
 Pour installer et exécuter ce projet, suivez les étapes ci-dessous :
 
+### Prérequis
+Assurez-vous d'avoir les éléments suivants installés sur votre machine :
+- [Node.js](https://nodejs.org/) (version recommandée : 14 ou supérieure)
+- [npm](https://www.npmjs.com/) (généralement inclus avec Node.js)
+- [Java](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html) (version 11 ou supérieure)
+
+### Étapes d'installation
 1. Clonez le dépôt :
    ```bash
-   git clone [https://github.com/utilisateur/nom_du_depot.git](https://github.com/hamzahamichan/FileRougeFrontEnd)
+   git clone https://github.com/hamzahamichan/FileRougeFrontEnd.git
+   cd FileRougeFrontEnd
