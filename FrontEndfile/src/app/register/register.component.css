@@ -1,0 +1,93 @@
+/* Animation pour les champs de texte */
+@keyframes inputFocus {
+  from {
+    border-color: #ddd;
+  }
+  to {
+    border-color: #007bff;
+  }
+}
+
+.textBox:focus {
+  animation: inputFocus 0.3s forwards;
+}
+
+/* Animation pour le bouton de soumission */
+@keyframes buttonHover {
+  from {
+    background-color: #007bff;
+  }
+  to {
+    background-color: #0056b3;
+  }
+}
+
+.submit:hover {
+  animation: buttonHover 0.3s forwards;
+}
+
+
+/* Styles de base */
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.box {
+  margin-bottom: 15px;
+}
+
+.fontLabel {
+  font-size: 14px;
+  color: #555;
+}
+
+.iconBox {
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+  color: #888;
+}
+
+.textBox {
+  width: calc(100% - 40px);
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+}
+
+.textBox:focus {
+  border-color: #007bff;
+}
+
+.submit {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit:hover {
+  background-color: #0056b3;
+}
+
+/* Réactivité */
+@media (max-width: 600px) {
+  .textBox {
+    width: 100%;
+  }
+}
