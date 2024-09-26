@@ -13,6 +13,10 @@ import { AdminPageComponent } from './admin-page/admin-page.component';
 import { AcceuilComponent } from './acceuil/acceuil.component';
 import { ListSalleComponent } from './list-salle/list-salle.component';
 import { LoginComponent } from './Page/login/login.component';
+import { FooterComponent } from './footer/footer.component';
+import { ListReservationComponent } from './list-reservation/list-reservation.component';
+import { AboutComponent } from './about/about.component';
+import { DeclareSalleComponent } from './declare-salle/declare-salle.component';
 
 
 @NgModule({
@@ -25,6 +29,11 @@ import { LoginComponent } from './Page/login/login.component';
     AdminPageComponent,
     AcceuilComponent,
     ListSalleComponent,
+    FooterComponent,
+    ListReservationComponent,
+    AboutComponent,
+    DeclareSalleComponent,
+
 
 
 

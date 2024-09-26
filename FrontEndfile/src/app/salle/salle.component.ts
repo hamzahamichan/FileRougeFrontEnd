@@ -1,49 +1,39 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {SalleService} from "../service/salle.service";
 import {Observable, Subscription} from "rxjs";
 import {Salle} from "../Modeles/Salle";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-salle',
   templateUrl: './salle.component.html',
   styleUrls: ['./salle.component.css']
 })
-export class SalleComponent {
-  salles: Salle[] = [];
-  salleForm !: FormGroup;
-
-  constructor(private fb: FormBuilder,private salleser:SalleService) {}
+export class SalleComponent implements OnInit{
+  salle : Salle | any;
+  constructor(private salleser:SalleService,private route: ActivatedRoute,) {}
 
   ngOnInit(): void {
-    this.loadSalles();
-    this.salleForm = this.fb.group({
-      nom: ['', Validators.required],
-      description: ['', Validators.required],
-      capacite: ['', [Validators.required, Validators.min(1)]],
-      emplacement: ['', Validators.required],
-      prix: ['', [Validators.required, Validators.min(0)]]
-    });
+    const idSalle = +this.route.snapshot.paramMap.get('idSalle')!;
+    this.salleser.getByid(idSalle).subscribe(
+      (resp: Salle) => {
+        this.salle = resp;
+      },
+      (error) => {
+        console.error("Erreur lors de la récupération des détails de la salle :", error);
+      }
+    );
   }
-
-  onSubmit(): void {
-    if (this.salleForm.valid) {
-      const nouvelleSalle: Salle = this.salleForm.value;
-      console.log('Nouvelle Salle:', nouvelleSalle);
-      this.salleser.addSalle(nouvelleSalle).subscribe(
-        (response) => {
-          console.log('Salle ajoutée avec succès:', response);
-        },
-        (error) => {
-          console.error('Erreur lors de l\'ajout de la salle:', error);
-        }
-      );
-    }
+  getSalleById(idSalle: number) {
+    this.salleser.getByid(idSalle).subscribe(
+      (resp: Salle) => {
+        console.log("Détails de la salle :", resp);
+        this.salle = resp;  // Assurez-vous d'avoir une propriété 'salle' dans votre composant pour stocker la réponse
+      },
+      (error) => {
+        console.error("Erreur lors de la récupération de la salle :", error);
+      }
+    );
   }
-  loadSalles(): void {
-    this.salleser.getSalles().subscribe((data: Salle[]) => {
-      this.salles = data;
-    });
-  }
-
 }

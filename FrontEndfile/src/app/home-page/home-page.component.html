@@ -1,38 +1,52 @@
-<footer class="footer">
-  <div class="footer-container">
-    <div class="footer-section about">
-      <h2>About Us</h2>
-      <p>We are a creative agency committed to delivering high-quality products.</p>
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
+<div class="background">
+  <div class="container">
+    <div class="screen">
+      <div class="screen-header">
+        <div class="screen-header-left">
+          <div class="screen-header-button close"></div>
+          <div class="screen-header-button maximize"></div>
+          <div class="screen-header-button minimize"></div>
+        </div>
+        <div class="screen-header-right">
+          <div class="screen-header-ellipsis"></div>
+          <div class="screen-header-ellipsis"></div>
+          <div class="screen-header-ellipsis"></div>
+        </div>
+      </div>
+      <div class="screen-body">
+        <div class="screen-body-item left">
+          <div class="app-title">
+            <span>CONTACT</span>
+            <span>US</span>
+          </div>
+          <div class="app-contact">CONTACT INFO : +212 600000000</div>
+        </div>
+        <div class="screen-body-item">
+          <div class="app-form">
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+              <div class="app-form-group">
+                <input formControlName="name" class="app-form-control" placeholder="NAME">
+              </div>
+              <div class="app-form-group">
+                <input formControlName="email" class="app-form-control" placeholder="EMAIL">
+              </div>
+              <div class="app-form-group">
+                <input formControlName="phone" class="app-form-control" placeholder="CONTACT NO"> <!-- Correction ici -->
+              </div>
+              <div class="app-form-group message">
+                <input formControlName="message" class="app-form-control" placeholder="MESSAGE">
+              </div>
+              <div class="app-form-group buttons">
+                <button type="button" class="app-form-button" (click)="contactForm.reset()">CANCEL</button>
+                <button type="submit" class="app-form-button">SEND</button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
-
-    <div class="footer-section links">
-      <h2>Quick Links</h2>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Blog</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-section contact-form">
-      <h2>Contact Us</h2>
-      <form action="#" method="post">
-        <input type="email" name="email" placeholder="Your email address..." />
-        <textarea name="message" placeholder="Your message..."></textarea>
-        <button type="submit">Send</button>
-      </form>
+    <div class="credits">
+      inspired by VIVA
     </div>
   </div>
-
-  <div class="footer-bottom">
-    <p>&copy; 2024 Your Company | Designed by YourName</p>
-  </div>
-</footer>
+</div>

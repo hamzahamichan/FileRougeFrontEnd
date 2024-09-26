@@ -30,7 +30,7 @@ export class LoginComponent {
         console.log('Role is ', role);
 
         if (role.includes('ADMIN')) {
-          this.router.navigate(['/sataistiques']);
+          this.router.navigate(['']);
         } else if (role.includes('USER')) {
           this.router.navigate(['/reserver']);
         } else {
