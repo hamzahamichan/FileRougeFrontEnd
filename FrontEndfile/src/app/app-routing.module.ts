@@ -8,21 +8,23 @@ import {AdminPageComponent} from "./admin-page/admin-page.component";
 import {AcceuilComponent} from "./acceuil/acceuil.component";
 import {ListSalleComponent} from "./list-salle/list-salle.component";
 import {LoginComponent} from "./Page/login/login.component";
+import {FooterComponent} from "./footer/footer.component";
+import {DeclareSalleComponent} from "./declare-salle/declare-salle.component";
+import {AboutComponent} from "./about/about.component";
 
 const routes: Routes = [
-  {path:"navbar",component:BarreNavigationComponent},
-  {path:"salle",component:SalleComponent},
-  {path:"register",component:RegisterComponent},
-  {path:"footer",component:HomePageComponent},
-  {path:"acceuil",component:AcceuilComponent},
-  {path:"login",component:LoginComponent},
-  {path:"listsalles",component:ListSalleComponent},
-  {path:"sataistiques",component:AdminPageComponent,children:[
-      {path:"dashboard/navbar",component:BarreNavigationComponent},
-
-    ]
-
-    }
+  {path:"",redirectTo:"acceuil",pathMatch:'full'},
+  { path: "navbar", component: BarreNavigationComponent },
+  { path: "salle", component: SalleComponent },
+  { path: "register", component: RegisterComponent },
+  {path:"découvre",component:FooterComponent},
+  { path: "footer", component: HomePageComponent },
+  { path: "login", component: LoginComponent },
+  { path: "list", component: ListSalleComponent },
+  { path: "statistiques", component: AdminPageComponent },
+  {path:"declarervotresalle",component:DeclareSalleComponent},
+  {path:"about",component:AboutComponent},
+  { path: "acceuil", component: AcceuilComponent} // Ajout de la route d'accueil
 ];
 
 @NgModule({
