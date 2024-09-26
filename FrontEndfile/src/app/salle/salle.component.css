@@ -1,0 +1,149 @@
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.search-container input {
+  margin: 10px 0;
+  padding: 10px;
+  width: 80%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.product-details, .product-image {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+}
+
+.product-details h1 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.hint-star {
+  color: #ffd700;
+}
+
+.information {
+  font-size: 0.9em;
+  color: #555;
+}
+
+.control .btn {
+  background: #28a745;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.control .btn:hover {
+  background: #218838;
+}
+
+.product-image .info {
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px;
+  width: 300px;
+}
+
+.product-image .info ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.product-image .info li {
+  margin: 5px 0;
+}
+
+
+
+body {
+  font-family: Arial, sans-serif;
+   /* Image d'arrière-plan */
+  background-size: cover;
+}
+
+.search-section {
+  text-align: center;
+  margin-top: 50px;
+  color: white;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.search-box {
+  margin: 0 10px;
+}
+
+.search-box label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+.search-box input {
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.search-button {
+  margin-left: 10px;
+}
+
+.search-button button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.search-button button i {
+  margin-right: 5px;
+}
+
+.search-button button:hover {
+  background-color: #0056b3;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
