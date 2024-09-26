@@ -20,10 +20,7 @@ export class RegisterComponent implements OnInit{
       nom: ['', Validators.required],
       prenom: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      motDePasse: ['', [Validators.required, Validators.minLength(6)]],
-      telephone: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
-      adresse: [''], // Si vous avez besoin d'une adresse
-      gender: ['', Validators.required], // Assurez-vous que l'énumération Gender est définie
+      motDePasse: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
 
