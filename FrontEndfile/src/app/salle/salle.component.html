@@ -1,103 +1,11 @@
-<!-- Nouvelle section pour afficher les salles dynamiques avec scroll horizontal -->
-<div class="container m-t-md">
-  <div class="scroll-container">
-    <div class="scroll-row">
-      <!-- Boucle *ngFor pour afficher chaque salle -->
-      <div class="card-wrapper" *ngFor="let salle of salles">
-        <article class="card animated fadeInLeft">
-          <div class="card-block">
-            <!-- Nom de la salle -->
-            <h4 class="card-title">{{ salle.nom }}</h4>
-            <!-- Capacité de la salle -->
-            <h6 class="text-muted">Capacité: {{ salle.capacite }}</h6>
-            <!-- Description de la salle -->
-            <p class="card-text">{{ salle.description }}</p>
-            <!-- Emplacement de la salle -->
-            <p class="card-text"><strong>Emplacement:</strong> {{ salle.emplacement }}</p>
-            <!-- Prix de la salle -->
-            <p class="card-text"><strong>Prix:</strong> {{ salle.prix }} €</p>
-            <!-- Bouton pour réserver -->
-            <a href="/reserver" class="btn btn-primary">Réserver</a>
-          </div>
-        </article>
-      </div>
-    </div>
+<div *ngIf="salle" class="card" style="width: 18rem;">
+  <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/185.webp" class="card-img-top" alt="Image de la salle">
+  <div class="card-body">
+    <h5 class="card-title">{{ salle.nom }}</h5>
+    <p class="card-text">{{ salle.description }}</p>
+    <p class="card-text">Capacité: {{ salle.capacite }}</p>
+    <p class="card-text">Emplacement: {{ salle.emplacement }}</p>
+    <p class="card-text">Prix: {{ salle.prix }} €</p>
+    <a href="#!" class="btn btn-primary">Réserver</a>
   </div>
 </div>
-
-<!-- Styles pour les cartes et le défilement horizontal -->
-<style>
-  /* Conteneur pour le défilement horizontal */
-  .scroll-container {
-    overflow-x: auto;
-    white-space: nowrap;
-    padding: 1px;
-    font-family: Algerian;
-
-  }
-
-  /* Ligne flexible pour aligner les cartes */
-  .scroll-row {
-    display: flex;
-    flex-wrap: nowrap;
-  }
-
-  /* Taille des cartes ajustées pour le scroll */
-  .card-wrapper {
-    flex: 0 0 300px; /* Largeur fixe des cartes */
-    margin-right: 35px;
-    padding-right:4px;
-  }
-
-  /* Apparence de la carte */
-  .card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    max-width: 100%; /* Assure que la carte ne dépasse pas de son conteneur */
-    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
-    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-  }
-
-  /* Animation simple */
-  .animated {
-    animation-duration: 0.5s;
-    animation-fill-mode: both;
-  }
-
-  /* Exemple d'animation */
-  @keyframes fadeInLeft {
-    from {
-      opacity: 0;
-      transform: translateX(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  /* Effet de survol */
-  .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(135deg, #c3cfe2, #f5f7fa);
-  }
-
-  /* Effet de survol pour le bouton */
-  .btn-primary {
-    transition: background-color 0.3s, border-color 0.3s;
-  }
-
-  .btn-primary:hover {
-    background-color: #004085;
-    border-color: #002752;
-  }
-
-  /* Effet responsive */
-  @media (max-width: 768px) {
-    .card-wrapper {
-      flex: 0 0 90%; /* Cartes plus grandes sur petits écrans */
-    }
-  }
-</style>
