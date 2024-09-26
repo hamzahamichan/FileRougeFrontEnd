@@ -1,4 +1,3 @@
-import {Gender} from "./Clientmodels";
 
 export interface RegisterRequest{
   nom: string;
@@ -6,6 +5,4 @@ export interface RegisterRequest{
   email: string;
   motDePasse: string;
   telephone: string;
-  adresse: string;
-  gender: Gender;
 }
