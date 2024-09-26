@@ -29,4 +29,7 @@ Prérequis<br> Assurez-vous d’avoir les éléments suivants installés sur vot
 Node.js (version recommandée : 14 ou supérieure)<br>
 npm (généralement inclus avec Node.js)<br>
 Java (version 11 ou supérieure)<br><br>
-Étapes d’installation<br> ...
+_                                                       ____
+Clonez le dépôt :
+git clone https://github.com/hamzahamichan/FileRougeFrontEnd.git
+cd FileRougeFrontEnd
