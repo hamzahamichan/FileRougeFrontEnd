@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {AuthService} from "../auth.service";
+import {AuthService} from "../service/AuthService/auth.service";
 import {Router} from "@angular/router";
 
 @Component({
@@ -20,7 +20,7 @@ export class RegisterComponent implements OnInit{
       nom: ['', Validators.required],
       prenom: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      motDePasse: ['', [Validators.required, Validators.minLength(6)]]
+      motDePasse: ['', [Validators.required, Validators.minLength(14)]]
     });
   }
 
