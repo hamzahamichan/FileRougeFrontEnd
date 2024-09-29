@@ -1,7 +1,7 @@
 
 export interface Salle {
   capacite: number;
-  description: String;
+  description: string;
   emplacement: string;
   idSalle: number;
   nom: string;
