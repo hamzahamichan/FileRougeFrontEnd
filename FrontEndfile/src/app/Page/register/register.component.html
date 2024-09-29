@@ -1,74 +1,93 @@
-<div class="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-purple-100">
-  <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md mx-auto h-3/5">
-    <h2 class="text-2xl font-bold mb-4 text-gray-700 text-center">Create Your Account</h2>
 
-    <form [formGroup]="registerForm" class="space-y-4">
-      <div class="grid grid-cols-2 gap-4">
-        <!-- First Name -->
+
+<section>
+  <div class="section1">
+    <h1 class="h1">S'inscrire sur EVENT-NET et déclarer votre salle</h1>
+  </div>
+  <div class="registration-section">
+    <h2>Inscrire votre salle sur EVEVT-NET, c'est :</h2>
+    <ul>
+      <li>✔ Bénéficier d'un trafic national depuis 2012,</li>
+      <li>✔ Référencer votre salle sur le premier annuaire gratuit de salles publiques et privées en location,</li>
+      <li>✔ Pas de commission sur vos locations, nous sommes rémunérés par la publicité diffusée par les annonceurs,</li>
+      <li>✔ Être contacté directement par téléphone ou par sur votre espace privé et recevoir des demandes de réservation et louer votre salle tout simplement !</li>
+    </ul>
+  </div>
+</section>
+<section>
+  <div class="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-purple-100">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md mx-auto h-3/5">
+      <h2 class="text-2xl font-bold mb-4 text-gray-700 text-center">Create Your Account</h2>
+
+      <form [formGroup]="registerForm" class="space-y-4">
+        <div class="grid grid-cols-2 gap-4">
+          <!-- First Name -->
+          <div>
+            <label for="nom" class="block text-gray-700 font-medium text-sm mb-1">First Name</label>
+            <input
+              type="text"
+              id="nom"
+              formControlName="nom"
+              required
+              class="w-full px-4 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent"
+              placeholder="Enter first name"
+            />
+          </div>
+
+          <!-- Last Name -->
+          <div>
+            <label for="prenom" class="block text-gray-700 font-medium text-sm mb-1">Last Name</label>
+            <input
+              type="text"
+              id="prenom"
+              formControlName="prenom"
+              required
+              class="w-full px-4 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent"
+              placeholder="Enter last name"
+            />
+          </div>
+        </div>
+
+        <!-- Email -->
         <div>
-          <label for="nom" class="block text-gray-700 font-medium text-sm mb-1">First Name</label>
+          <label for="email" class="block text-gray-700 font-medium text-sm mb-1">Email</label>
           <input
-            type="text"
-            id="nom"
-            formControlName="nom"
+            type="email"
+            id="email"
+            formControlName="email"
             required
             class="w-full px-4 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent"
-            placeholder="Enter first name"
+            placeholder="Enter your email"
           />
         </div>
 
-        <!-- Last Name -->
+        <!-- Password -->
         <div>
-          <label for="prenom" class="block text-gray-700 font-medium text-sm mb-1">Last Name</label>
+          <label for="motDePasse" class="block text-gray-700 font-medium text-sm mb-1">Password</label>
           <input
-            type="text"
-            id="prenom"
-            formControlName="prenom"
+            type="password"
+            id="motDePasse"
+            formControlName="motDePasse"
             required
             class="w-full px-4 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent"
-            placeholder="Enter last name"
+            placeholder="Enter your password"
           />
         </div>
+
+        <!-- Register Button -->
+        <button (click)="register()"
+                type="submit"
+                class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-2 px-4 rounded-md hover:from-blue-700 hover:to-purple-700 transition duration-300 ease-in-out text-base font-semibold shadow-lg mt-4"
+        >
+          Register
+        </button>
+      </form>
+
+      <div class="mt-4 text-center text-sm">
+        <p class="text-gray-600">Already have an account?</p>
+        <a href="/login" class="text-indigo-500 hover:underline">Login here</a>
       </div>
-
-      <!-- Email -->
-      <div>
-        <label for="email" class="block text-gray-700 font-medium text-sm mb-1">Email</label>
-        <input
-          type="email"
-          id="email"
-          formControlName="email"
-          required
-          class="w-full px-4 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent"
-          placeholder="Enter your email"
-        />
-      </div>
-
-      <!-- Password -->
-      <div>
-        <label for="motDePasse" class="block text-gray-700 font-medium text-sm mb-1">Password</label>
-        <input
-          type="password"
-          id="motDePasse"
-          formControlName="motDePasse"
-          required
-          class="w-full px-4 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent"
-          placeholder="Enter your password"
-        />
-      </div>
-
-      <!-- Register Button -->
-      <button (click)="register()"
-              type="submit"
-              class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-2 px-4 rounded-md hover:from-blue-700 hover:to-purple-700 transition duration-300 ease-in-out text-base font-semibold shadow-lg mt-4"
-      >
-        Register
-      </button>
-    </form>
-
-    <div class="mt-4 text-center text-sm">
-      <p class="text-gray-600">Already have an account?</p>
-      <a href="/login" class="text-indigo-500 hover:underline">Login here</a>
     </div>
   </div>
-</div>
+
+</section>
