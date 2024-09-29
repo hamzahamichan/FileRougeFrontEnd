@@ -231,7 +231,7 @@
         <div class="card-body">
           <h5 class="card-title">{{ salle.nom }}</h5>
           <p class="card-text">Capacité: {{ salle.capacite }}</p>
-          <a href="salle" class="btn btn-primary" data-mdb-ripple-init>Voir les détails</a>
+          <a href="salle" class="btn btn-primary" data-mdb-ripple-init  (click)="voirdetails()">Voir les détails</a>
         </div>
       </div>
 
@@ -246,68 +246,6 @@
     </div>
     <button class="arrow right-arrow" onclick="scrollRight()">&#10095;</button>
   </section>
-
-
-  <style>
-    .banner {
-      font-family: Arial, sans-serif;
-      background-color: #0088cc;
-      color: white;
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .banner-content {
-      max-width: 70%;
-    }
-    .banner h1 {
-      font-size: 24px;
-      margin: 0 0 10px 0;
-    }
-    .banner p {
-      font-size: 14px;
-      margin: 0;
-    }
-    .contact-button {
-      background-color: white;
-      color: #0088cc;
-      border: none;
-      border-radius: 20px;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    .content {
-      text-align: center;
-      max-width: 600px;
-    }
-    .contact-button {
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      background-color: #4CAF50; /* Green */
-      border: none;
-      border-radius: 5px;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-      margin-top: 10px;
-      color: black;
-      border: 30px;
-      background: #ffffff;
-      text-decoration: none;
-      display: inline-block;
-    }
-    .contact-button:hover {
-      background-color: #ffffff; /* Darker green */
-      transform: scale(1.1); /* Slightly enlarge the button */
-    }
-    .contact-button a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-
-  </style>
   <body>
   <div class="banner">
     <div class="banner-content">
@@ -317,28 +255,6 @@
     <button class="contact-button" ><a href="footer">Contactez nous</a></button>
   </div>
   </body>
-
-
-
 </main>
 
- <script>
-    const cardContainer = document.querySelector('.card-container');
-
-    function scrollLeft() {
-    cardContainer.scrollBy({
-      top: 0,
-      left: -250, // Changez cette valeur pour ajuster la distance du défilement
-      behavior: 'smooth'
-    });
-  }
-
-    function scrollRight() {
-    cardContainer.scrollBy({
-      top: 0,
-      left: 250, // Changez cette valeur pour ajuster la distance du défilement
-      behavior: 'smooth'
-    });
-  }
-</script>
 

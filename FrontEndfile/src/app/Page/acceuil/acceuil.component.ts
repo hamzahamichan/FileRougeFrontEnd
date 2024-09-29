@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Salle } from "../Modeles/Salle";
 import { SalleService } from "../service/salle.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-acceuil',
@@ -16,7 +17,7 @@ export class AcceuilComponent implements OnInit {
   searchCapacity: number | null = null;
 
 
-  constructor(private fb: FormBuilder, private salleser: SalleService) {
+  constructor(private fb: FormBuilder, private salleser: SalleService , private router:Router) {
     this.searchForm = this.fb.group({
       nom: [''],
       description: [''],
@@ -30,18 +31,12 @@ export class AcceuilComponent implements OnInit {
       this.salles = data;
       this.filteredSalles = data; // Initialement, toutes les salles sont affichées
     });
+
+   
   }
 
   onSearch() {
-    const { nom, description, capacite, emplacement } = this.searchForm.value;
-    this.salleser.searchSalles(nom, description, capacite, emplacement).subscribe(
-      (data: Salle[]) => {
-        this.salles = data;
-      },
-      (error) => {
-        console.error('Erreur lors de la recherche des salles', error);
-      }
-    );
+
   }
 
   filterSalles() {
@@ -62,6 +57,10 @@ export class AcceuilComponent implements OnInit {
         console.error("Erreur lors de la récupération des salles :", error);
       }
     );
+  }
+
+  voirdetails() {
+
   }
 
 }

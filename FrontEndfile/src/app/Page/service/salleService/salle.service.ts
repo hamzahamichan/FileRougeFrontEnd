@@ -11,7 +11,6 @@ export class SalleService {
 
   private search="http://localhost:9090/api/salles/search";
   private apiUrl="http://localhost:9090/api/salles/salles";
-  private get="http://localhost:9090/api/salles/salle";
 
   constructor(private http:HttpClient) { }
 
@@ -23,25 +22,15 @@ export class SalleService {
     return this.http.get<Salle[]>(this.apiUrl).pipe(catchError(this.handleError));
   }
 
-  getByid(idSalle: number): Observable<Salle> {
-    const url = `${this.get}/${idSalle}`;  // Assurez-vous que l'API utilise cette structure
-    return this.http.get<Salle>(url).pipe(
-      catchError(this.handleError)
-    );
+  getByid(idSalle:number){
+    const byID = "http://localhost:9090/api/salles/salle";
+    return this.http.get(byID).pipe(catchError(this.handleError));
   }
 
 
 
 
-  searchSalles(nom: any, description: any, capacite: any, emplacement: any) {
-    let params = new HttpParams();
-    if (nom) params = params.append('nom', nom);
-    if (description) params = params.append('description', description);
-    if (capacite) params = params.append('capacite', capacite.toString());
-    if (emplacement) params = params.append('emplacement', emplacement);
 
-    return this.http.get<Salle[]>(`${this.search}/search`, { params });
-  }
 
   private handleError(error: HttpErrorResponse) {
     let errorMessage = 'An unknown error occurred!';
