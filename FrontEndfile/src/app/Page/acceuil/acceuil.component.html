@@ -226,12 +226,12 @@
         </div>
       </div>
 
-      <div *ngFor="let salle of salles" class="card"s>
+      <div *ngFor="let salle of salles" class="card">
         <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/185.webp" class="card-img-top" alt="Image de la salle">
         <div class="card-body">
           <h5 class="card-title">{{ salle.nom }}</h5>
           <p class="card-text">Capacité: {{ salle.capacite }}</p>
-          <a href="salle" class="btn btn-primary" data-mdb-ripple-init  (click)="voirdetails()">Voir les détails</a>
+          <a class="btn btn-primary" (click)="voirdetails(salle.idSalle)">Voir les détails</a>
         </div>
       </div>
 
