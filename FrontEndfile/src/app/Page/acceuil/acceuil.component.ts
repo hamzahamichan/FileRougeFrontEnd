@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Salle } from "../Modeles/Salle";
-import { SalleService } from "../service/salle.service";
+import { Salle } from "../../Modeles/Salle";
+import { SalleService } from "../service/salleService/salle.service";
 import {Router} from "@angular/router";
 
 @Component({
@@ -10,11 +10,15 @@ import {Router} from "@angular/router";
   styleUrls: ['./acceuil.component.css']
 })
 export class AcceuilComponent implements OnInit {
+  @Output() viewDetailsEvent = new EventEmitter<Salle>();
+
   searchForm: FormGroup;
   salles: Salle[] = [];
   filteredSalles: any[] = []; // Liste des salles filtrées
   searchLocation: string = ''; // Rechercher par emplacement
   searchCapacity: number | null = null;
+  result: Salle[] = [];
+  searchTerm: string = '';
 
 
   constructor(private fb: FormBuilder, private salleser: SalleService , private router:Router) {
@@ -32,12 +36,9 @@ export class AcceuilComponent implements OnInit {
       this.filteredSalles = data; // Initialement, toutes les salles sont affichées
     });
 
-   
-  }
-
-  onSearch() {
 
   }
+
 
   filterSalles() {
     this.filteredSalles = this.salles.filter(salle => {
@@ -59,8 +60,18 @@ export class AcceuilComponent implements OnInit {
     );
   }
 
-  voirdetails() {
+  voirdetails(idSalle:number) {
+      this.router.navigate(['salle-details', idSalle]);
+    }
 
+  onSearch(): void {
+    this.salleser.searchSalles(this.searchTerm).subscribe(
+      (data: Salle[]) => {
+        this.salles = data;
+      },
+      (error) => {
+        console.error('Error fetching salles', error);
+      }
+    );
   }
-
 }
