@@ -1,0 +1,24 @@
+<h6>Réserver cette salle</h6>
+<form (ngSubmit)="reserverSalle()" #reservationForm="ngForm">
+  <div class="mb-3">
+    <label for="eventType" class="form-label">Type d'événement</label>
+    <input type="text" id="eventType" class="form-control" [(ngModel)]="reservationDto.eventType" name="eventType" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="nbrParticipants" class="form-label">Nombre de participants</label>
+    <input type="number" id="nbrParticipants" class="form-control" [(ngModel)]="reservationDto.nbrParticipants" name="nbrParticipants" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="details" class="form-label">Détails</label>
+    <textarea id="details" class="form-control" [(ngModel)]="reservationDto.details" name="details" required></textarea>
+  </div>
+
+  <div class="mb-3">
+    <label for="dateDebut" class="form-label">Date de début</label>
+    <input type="datetime-local" id="dateDebut" class="form-control" [(ngModel)]="reservationDto.dateDebut" name="dateDebut" required>
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="!reservationForm.form.valid">Réserver</button>
+</form>
